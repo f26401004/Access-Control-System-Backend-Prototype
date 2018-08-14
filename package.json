@@ -1,7 +1,7 @@
 {
   "name": "access-control-system-backend",
   "version": "1.0.0",
-  "description": "the profile of access control system backend",
+  "description": "the prototype of access control system backend",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,6 +11,7 @@
   "dependencies": {
     "express": "^4.16.3",
     "mysql": "^2.16.0",
+    "mysql2": "^1.6.1",
     "sequelize": "^4.38.0"
   }
 }

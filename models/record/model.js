@@ -1,7 +1,8 @@
-module.exports = (sequelize, DataTypes) => sequelize.define('record', {
+module.exports = (sequelize, DataTypes) => sequelize.define('Record', {
 	id: {
 		type: DataTypes.INTEGER,
-		field: 'Id'
+		field: 'Id',
+		primaryKey: true
 	},
 	cardid: {
 		type: DataTypes.CHAR(10),
@@ -16,11 +17,11 @@ module.exports = (sequelize, DataTypes) => sequelize.define('record', {
 		field: 'Privilege'
 	},
 	time: {
-		type: DataTypes.TIMESTAMP,
+		type: 'TIMESTAMP',
 		field: 'Time'
 	},
 	name: {
-		type: DataTypes.VARCHAR(10),
+		type: DataTypes.STRING(10),
 		field: 'Name'
 	}
 })

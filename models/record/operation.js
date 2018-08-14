@@ -1,22 +1,24 @@
-
 const RecordModel = require('./model.js');
 
 module.exports = (sequelize, Sequelize) => {
 	const model = RecordModel(sequelize, Sequelize);
 	return {
-		getAllRecord: () => model.findAll().then(data => {
-			console.log(data);
-		}),
-		getAllTimeRecord: () => modle.findAll({
-			attributes: ['time']
-		}).then(data => {
-			console.log(data);
-		}),
-		deleteOneRecord: (target_id) => model.destroy({ 
-			where: { id: target_id } 
-		}).then(data => {
-			console.log('delete one record success!!');
-		}),
+		getAllRecord: async () => {
+			const data = await model.findAll();
+			return data;
+		},
+		getAllTimeRecord: async () => {
+			const data = await modle.findAll({
+				attributes: ['time']
+			})
+			return data;
+		},
+		deleteOneRecord: async (target_id) => {
+			const data = await model.destroy({ 
+				where: { id: target_id } 
+			})
+			return data;
+		},
 
 	}
 }

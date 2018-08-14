@@ -1,7 +1,8 @@
-module.exports = (sequelize, DataTypes) => sequelize.define('blocklist', {
+module.exports = (sequelize, DataTypes) => sequelize.define('Blocklist', {
 	id: {
 		type: DataTypes.INTEGER,
-		field: 'Id'
+		field: 'Id',
+		primaryKey: true
 	},
 	cardid: {
 		type: DataTypes.CHAR(10),
@@ -16,15 +17,15 @@ module.exports = (sequelize, DataTypes) => sequelize.define('blocklist', {
 		field: 'Privilege'
 	},
 	since: {
-		type: DataTypes.TIMESTAMP,
+		type: 'TIMESTAMP',
 		field: 'Since'
 	},
 	expire: {
-		type: DataTypes.TIMESTAMP,
+		type: 'TIMESTAMP',
 		field: 'Expire'
 	},
 	name: {
-		type: DataTypes.VARCHAR(10),
+		type: DataTypes.STRING(10),
 		field: 'Name'
 	}
 })
