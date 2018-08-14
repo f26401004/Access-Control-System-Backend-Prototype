@@ -4,20 +4,36 @@ module.exports = (sequelize, Sequelize) => {
 	const model = RecordModel(sequelize, Sequelize);
 	return {
 		getAllRecord: async () => {
-			const data = await model.findAll();
-			return data;
+			try {
+				const data = await model.findAll();
+				return data;
+			} catch (reject) {
+				console.log(reject);
+				return null;
+			}
 		},
 		getAllTimeRecord: async () => {
-			const data = await modle.findAll({
-				attributes: ['time']
-			})
-			return data;
+			try {
+				const data = await model.findAll({
+					attributes: ['time']
+				})
+				return data;
+			} catch (reject) {
+				console.log(reject);
+				return null;
+			}
 		},
 		deleteOneRecord: async (target_id) => {
-			const data = await model.destroy({ 
-				where: { id: target_id } 
-			})
-			return data;
+			try {
+				const data = await model.destroy({ 
+					where: { id: target_id } 
+				})
+				return true;
+
+			} catch (reject) {
+				console.log(reject);
+				return false;
+			}
 		},
 
 	}
