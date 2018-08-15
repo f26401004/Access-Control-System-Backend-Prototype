@@ -23,6 +23,17 @@ module.exports = (sequelize, Sequelize) => {
 				return null;
 			}
 		},
+		getAllMethodRecord: async () => {
+			try {
+				const data = await model.findAll({
+					attributes: ['method']
+				})
+				return data;
+			} catch (reject) {
+				console.log(reject);
+				return null;
+			} 
+		},
 		deleteOneRecord: async (target_id) => {
 			try {
 				const data = await model.destroy({ 

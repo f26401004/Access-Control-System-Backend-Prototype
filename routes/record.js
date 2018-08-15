@@ -25,6 +25,17 @@ router.get('/getAllTimeRecord', (req, res) => {
 	});
 });
 
+// get all record method from database.
+router.get('/getAllMethodRecord', (req, res) => {
+	model.RecordOp.getAllMethodRecord().then(result => {
+		console.log(result);
+		res.json(result);
+	}).catch(reason => {
+		console.log(reason);
+		res.send('Can mot get the data from database: ' + reason);
+	})
+})
+
 
 //remove general record api
 router.delete('/deleteRecord/:id', (req, res) => {

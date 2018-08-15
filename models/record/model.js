@@ -23,6 +23,10 @@ module.exports = (sequelize, DataTypes) => sequelize.define('Record', {
 	name: {
 		type: DataTypes.STRING(10),
 		field: 'Name'
+	},
+	method: {
+		type: DataTypes.INTEGER,
+		field: 'Method'
 	}
 })
 
